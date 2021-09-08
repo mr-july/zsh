@@ -269,20 +269,6 @@ zinit load zdharma/zplugin-crasis
 setopt no_beep
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# Local Config
-[[ -f "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
-
-foreach piece (
-    exports.zsh
-    node.zsh
-    aliases.zsh
-    functions.zsh
-) {
-    local f="$ZDOTDIR/.local/$piece"
-    [[ -f $f ]] && . $f
-}
-
-
 # - - - - - - - - - - - - - - - - - - - -
 # cdr, persistent cd
 # - - - - - - - - - - - - - - - - - - - -
@@ -321,6 +307,20 @@ foreach piece (
 
 # To Customize Prompt, Run `p10k configure` Or Edit `$ZDOTDIR/.p10k.zsh`.
 [[ -f "$ZDOTDIR/.p10k.zsh" ]] && . "$ZDOTDIR/.p10k.zsh"
+
+
+# Local Config
+[[ -f "$ZDOTDIR/.zshrc.local" ]] && source "$ZDOTDIR/.zshrc.local"
+
+foreach piece (
+    exports.zsh
+    node.zsh
+    aliases.zsh
+    functions.zsh
+) {
+    local f="$ZDOTDIR/.local/$piece"
+    [[ -f $f ]] && . $f
+}
 
 
 # - - - - - - - - - - - - - - - - - - - -
