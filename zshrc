@@ -242,6 +242,18 @@ zplugin snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/comp
 zplugin ice wait"0c" lucid
 zplugin snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 
+# Seach the History by Entered Substring on Up and Down Keys
+_zsh-history-substring-search-setting() {
+  bindkey '^[[A' history-substring-search-up
+  bindkey '^[[B' history-substring-search-down
+  bindkey "$terminfo[kcuu1]" history-substring-search-up
+  bindkey "$terminfo[kcud1]" history-substring-search-down
+  HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+}
+zplugin ice wait"0c" atload"_zsh-history-substring-search-setting" lucid
+zplugin light zsh-users/zsh-history-substring-search
+
+
 # Recommended Be Loaded Last.
 zinit ice wait blockf lucid atpull'zinit creinstall -q .'
 zinit load zsh-users/zsh-completions
