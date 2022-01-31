@@ -167,9 +167,9 @@ alias   psg="ps -ef | fgrep"
 __ZINIT="$ZDOTDIR/.zinit/bin/zinit.zsh"
 
 if [[ ! -f "$__ZINIT" ]]; then
-    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma/zinit)…%f"
+    print -P "%F{33}▓▒░ %F{220}Installing DHARMA Initiative Plugin Manager (zdharma-continuum/zinit)…%f"
     command mkdir -p "$ZDOTDIR/.zinit" && command chmod g-rwX "$ZDOTDIR/.zinit"
-    command git clone https://github.com/zdharma/zinit "$ZDOTDIR/.zinit/bin" && \
+    command git clone https://github.com/zdharma-continuum/zinit "$ZDOTDIR/.zinit/bin" && \
         print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
         print -P "%F{160}▓▒░ The clone has failed.%f%b"
 fi
@@ -204,11 +204,9 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 # Load a few important annexes, without Turbo (this is currently required for annexes)
 zinit light-mode compile"handler" for \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-bin-gem-node \
-    zinit-zsh/z-a-submods \
-    zdharma/declare-zsh
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/declare-zsh
 
 
 # - - - - - - - - - - - - - - - - - - - -
@@ -227,7 +225,7 @@ zinit wait lucid light-mode for \
       OMZ::lib/termsupport.zsh \
       OMZ::plugins/git-auto-fetch/git-auto-fetch.plugin.zsh \
   atinit"zicompinit; zicdreplay" \
-        zdharma/fast-syntax-highlighting \
+        zdharma-continuum/fast-syntax-highlighting \
       OMZ::plugins/colored-man-pages/colored-man-pages.plugin.zsh \
       OMZ::plugins/command-not-found/command-not-found.plugin.zsh \
   atload"_zsh_autosuggest_start" \
@@ -261,17 +259,17 @@ zinit load zsh-users/zsh-completions
 # rbenv
 # zinit ice has'rbenv' id-as'rbenv' atpull'%atclone' \
 #     atclone"rbenv init - --no-rehash > htlsne/zplugin-rbenv"
-# zinit load zdharma/null
+# zinit load zdharma-continuum/null
 
 # pyenv
 # zinit ice has'pyenv' id-as'pyenv' atpull'%atclone' \
 #     atclone"pyenv init - --no-rehash > pyenv.plugin.zsh"
-# zinit load zdharma/null
+# zinit load zdharma-continuum/null
 
 # Semi-graphical .zshrc editor for zinit commands
-zinit load zdharma/zui
-zinit ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
-zinit load zdharma/zplugin-crasis
+# zinit load zdharma-continuum/zui
+# zinit ice lucid wait'[[ -n ${ZLAST_COMMANDS[(r)cras*]} ]]'
+# zinit load zdharma-continuum/zplugin-crasis
 
 
 # - - - - - - - - - - - - - - - - - - - -
