@@ -154,7 +154,7 @@ bindkey  "^[[H"   beginning-of-line             # [Home]
 bindkey  "^A"     beginning-of-line             # [Ctrl+A]
 bindkey  "^[[F"   end-of-line                   # [End]
 bindkey  "^E"     end-of-line                   # [Ctrl+E]
-
+bindkey "^[[3~"   delete-char                   # Neo L4 Delete
 
 # Aliases
 alias   ll="ls -al"
