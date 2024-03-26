@@ -158,7 +158,7 @@ bindkey "^[[3~"   delete-char                   # Neo L4 Delete
 
 # Aliases
 alias   ll="ls -al"
-alias   psg="ps -ef | fgrep"
+alias   psg="ps -ef | grep"
 
 # - - - - - - - - - - - - - - - - - - - -
 # Zinit Configuration
