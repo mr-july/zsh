@@ -232,7 +232,7 @@ zinit wait lucid light-mode for \
   atload"_zsh_autosuggest_start" \
       zsh-users/zsh-autosuggestions \
   as"completion" \
-      OMZ::plugins/docker/_docker \
+      OMZ::plugins/docker/docker.plugin.zsh \
       OMZ::plugins/pyenv/pyenv.plugin.zsh
 
 # fzf support (Ctrl-T, Alt-C, Crtl-R)
