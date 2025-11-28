@@ -159,6 +159,7 @@ bindkey "^[[3~"   delete-char                   # Neo L4 Delete
 # Aliases
 alias   ll="ls -al"
 alias   psg="ps -ef | grep"
+alias   urldecode="sed -e 's/%\([0-9A-F][0-9A-F]\)/\\\\\\\x\1/g' | xargs echo -e "
 
 # - - - - - - - - - - - - - - - - - - - -
 # Zinit Configuration
